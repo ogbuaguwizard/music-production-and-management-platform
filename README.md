@@ -284,8 +284,6 @@ The platform separates normal users from administrative users through distinct a
 
 Authorization policies are used throughout the admin panel, and administrative actions are tracked so that activity within the system can be reviewed.
 
-> **[DIAGRAM PLACEHOLDER — Admin Role & Authorization Matrix]**
-
 ---
 
 ## Application Structure & Service Layer
@@ -331,9 +329,6 @@ Database Export
       ↓
 Upload to Google Drive
 ```
-
-> **[DIAGRAM PLACEHOLDER — Notification & Backup Job Flow]**
-
 ---
 
 ## Automated Console Commands
@@ -353,8 +348,6 @@ sitemap.xml Updated in Public Folder
       ↓
 Google Search Console Indexing
 ```
-
-> **[DIAGRAM PLACEHOLDER — Sitemap Generation & Indexing Flow]**
 
 ---
 
@@ -397,9 +390,6 @@ Feature & Unit Tests
 Pass → Proceed to Deployment
 Fail → Deployment Blocked
 ```
-
-> **[DIAGRAM PLACEHOLDER — CI Test Gate Before Deployment]**
-
 ---
 
 ## Deployment & CI/CD
@@ -440,29 +430,6 @@ GitHub Actions
                     ▼
               Production App
 ```
-
-> **[DIAGRAM PLACEHOLDER — CI/CD Deployment Pipeline]**
-
-### Deployment Security
-
-Production credentials and SSH authentication details are not stored in the repository. Deployment secrets are supplied through GitHub Actions' secret management.
-
-**No private keys, passwords, API credentials, or production environment variables should appear in this public case-study repository.**
-
----
-
-## Security Considerations
-
-| Area | Implementation |
-|---|---|
-| Identity | Authentication, separate authentication guards |
-| Access Control | Authorization policies, role-based access control |
-| Data Integrity | Form validation via dedicated Request classes |
-| Payments | Payment verification through Paystack |
-| Visitor Privacy | Fingerprint-based visitor tracking with no demographic data collection |
-| Secrets | Environment-based secrets, separation of production credentials from source control |
-| Quality Gate | Automated test suite run in CI prior to every deployment |
-
 ---
 
 ## Third-Party Integrations
@@ -509,142 +476,6 @@ Production credentials and SSH authentication details are not stored in the repo
 
 ---
 
-## Notable Laravel Architecture
-
-| Layer | Responsibility |
-|---|---|
-| **Models** | Represent domain entities and database relationships |
-| **Controllers** | Handle HTTP requests and coordinate application workflows |
-| **Requests** | Handle validation separately from controllers |
-| **Middleware** | Handled in a dedicated, separate layer |
-| **Policies** | Enforce resource-level authorization |
-| **Services** | Encapsulate business logic and domain workflows |
-| **Listeners / Jobs** | Handle queued background work such as database backups |
-| **Notifications** | Handle booking and message alerts |
-| **Migrations** | Version and manage database structure |
-| **Guards** | Separate normal-user and administrative authentication contexts |
-
----
-
-## Resource-Oriented Admin Architecture
-
-Administrative resources follow a consistent structure:
-
-```text
-Resource
-  │
-  ├── Index
-  ├── Create
-  ├── Show
-  ├── Edit
-  └── Update
-```
-
-This approach is applied across Music Sheets, Audio, Video, Bookings, Events, Donations, Payments, Registered Users, Guest/Visitor Users, and Staff/Admin management.
-
----
-
-## Engineering Highlights
-
-| Highlight | Description |
-|---|---|
-| **Full-Stack Product Development** | Designed and developed a ministry platform spanning media streaming, bookings, commerce, donations, and administration |
-| **External Streaming Integration** | Linked audio and video content to Spotify, Audiomack, and YouTube rather than self-hosting media |
-| **Payments Integration** | Implemented Paystack for both donations and paid digital content |
-| **Automated Quality Gate** | Introduced a CI-run test suite (`test.yaml`) that must pass before deployment proceeds |
-| **Privacy-Conscious Visitor Tracking** | Built fingerprint-based visitor tracking that avoids collecting demographic data while still allowing record claiming |
-| **Workflow Automation** | Automated sitemap generation, database backups to Google Drive, and deployment |
-| **Production Deployment** | Configured and maintained a production Laravel deployment on shared hosting using CI/CD, FTP, SSH, Composer, and migrations |
-
----
-
-## Project Screenshots
-
-| # | Recommended Screenshot |
-|---|---|
-| 1 | Homepage / Public Platform |
-| 2 | Music Library |
-| 3 | Video Library |
-| 4 | Music Sheet Store |
-| 5 | Music Sheet Checkout |
-| 6 | Booking Form |
-| 7 | Event Listing |
-| 8 | Event Registration |
-| 9 | Donation Page |
-| 10 | Admin Dashboard |
-| 11 | Music Sheet Management |
-| 12 | Audio Management |
-| 13 | Video Management |
-| 14 | Booking Management |
-| 15 | Event Management |
-| 16 | Donation Tracking |
-| 17 | Payment History |
-| 18 | Registered Users |
-| 19 | Guest/Visitor Users |
-| 20 | Staff/Admin Management |
-
-> **[SCREENSHOT GALLERY PLACEHOLDER — Add a curated collection of the strongest UI screenshots here.]**
-
----
-
-## Recommended Technical Diagrams
-
-### 1. System Architecture
-
-```text
-Users
- ↓
-Public Website / Admin Panel
- ↓
-Laravel Application
- ↓
-Services / Policies / Models
- ↓
-Database
- ↓
-External Services
-```
-
-### 2. Domain / Entity Relationship Diagram
-
-Focus on the major relationships between Admin, User, Visitor, Audio, Video, Booking, Event, Donation, and Payment.
-
-### 3. Booking Lifecycle
-
-```text
-Booking Submitted
- ↓
-Notification Sent
- ↓
-Admin Review
- ↓
-Performance or Recording-Only Confirmed
-```
-
-### 4. CI/CD Pipeline
-
-```text
-Git Push
- ↓
-GitHub Actions
- ↓
-Run Test Suite (test.yaml)
- ↓
-FTP Deployment
- ↓
-SSH
- ↓
-Composer
- ↓
-Migrations
- ↓
-Generate Sitemap
- ↓
-Production
-```
-
----
-
 ## What This Project Demonstrates
 
 | Category | Skills Demonstrated |
@@ -659,47 +490,6 @@ Production
 | Privacy-Aware Design | Fingerprint-based anonymous visitor tracking without demographic data collection |
 | DevOps | CI/CD, automated testing gates, shared-hosting deployment, SSH server operations, GitHub Actions |
 | Automation | Scheduled database backups, automated sitemap generation for SEO |
-
----
-
-## Confidentiality & Portfolio Disclaimer
-
-> **This repository is a portfolio case study and documentation of my work on the Obiblo Music platform.**
->
-> The original application and its source code remain private because the software was developed for **Obiblo Music** and may contain proprietary business logic, intellectual property, internal workflows, private information, and other confidential material.
->
-> This public repository therefore contains **documentation, selected screenshots, architectural explanations, and project information only**. It does not intentionally expose proprietary source code, production credentials, private user information, environment variables, API keys, SSH keys, passwords, or other confidential infrastructure details.
->
-> Screenshots and technical descriptions included here are presented strictly for professional portfolio purposes.
-
----
-
-## Public Repository Safety Checklist
-
-Before publishing this case study, verify that the repository contains **none** of the following:
-
-| Category | Items to Exclude |
-|---|---|
-| Credentials & Secrets | `.env` files, API keys, Cloudinary secrets, Paystack keys, Mailjet credentials, SSH private keys, GitHub deployment secrets, database credentials, production passwords, authentication tokens |
-| Private Data | Private user records, personal contact information, visitor fingerprint data |
-| Infrastructure Details | Private admin URLs where inappropriate, signed URLs containing sensitive information, internal server paths, internal hostnames |
-| Proprietary Material | Confidential business documents, proprietary source code |
-
-Also review screenshots carefully for: email addresses, phone numbers, names of private individuals, password fields, API responses, browser URLs, admin credentials, database IDs, internal hostnames, and private documents.
-
----
-
-## Conclusion
-
-The Obiblo Music platform brings a gospel ministry's production, performance, and outreach activity into a single digital operating system.
-
-It connects:
-
-**Music & Video Library → Music Sheets → Bookings → Events → Donations → Payments → Administration**
-
-The system was designed to streamline bookings, protect visitor privacy, automate SEO and backup housekeeping, and gate every deployment behind an automated test suite.
-
-From an engineering perspective, the project demonstrates the ability to take a real ministry's operational needs — bookings, streaming, commerce, and donations — and translate them into a maintainable, tested, full-stack Laravel application.
 
 ---
 
