@@ -111,10 +111,10 @@ The platform maintains a media library of the ministry's audio and video work.
 - Audio content is linked to external streaming platforms — **Spotify** and **Audiomack** — rather than hosted directly, and can also be streamed on-site via embedded players (iframes)
 - Video content is linked similarly to **YouTube**
 - Audio and video entries can be associated with music sheets where applicable
-
-> **[SCREENSHOT PLACEHOLDER — Public Music Library]**
-
-> **[SCREENSHOT PLACEHOLDER — Public Video Library]**
+<p align="center">
+  <img src="images/media.png" alt="Architecture" width="45%">
+  <img src="images/video.png" alt="Architecture" width="45%">
+</p>
 
 ---
 
@@ -140,12 +140,10 @@ User Requests Access
 Free? → Immediate Access
 Paid? → Paystack Checkout → Access Granted
 ```
-
-> **[DIAGRAM PLACEHOLDER — Music Sheet Access Flow]**
-
-> **[SCREENSHOT PLACEHOLDER — Music Sheet Store]**
-
-> **[SCREENSHOT PLACEHOLDER — Music Sheet Checkout]**
+<p align="center">
+  <img src="images/sheet.png" alt="Music Sheet" width="45%">
+  <img src="images/sheet2.png" alt="Music Sheet" width="45%">
+</p>
 
 ---
 
