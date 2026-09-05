@@ -158,9 +158,10 @@ Users can book the ministry for two distinct kinds of engagements:
 
 Booking submissions are recorded and trigger a notification workflow to the ministry.
 
-> **[SCREENSHOT PLACEHOLDER — Booking Form]**
-
-> **[SCREENSHOT PLACEHOLDER — Booking Confirmation]**
+<p align="center">
+  <img src="images/book.png" alt="Booking" width="45%">
+  <img src="images/book2.png" alt="Booking" width="45%">
+</p>
 
 ---
 
@@ -168,9 +169,9 @@ Booking submissions are recorded and trigger a notification workflow to the mini
 
 The ministry can publish its own events, such as tours, where the public can register — whether the event is free or requires registration to attend.
 
-> **[SCREENSHOT PLACEHOLDER — Event Listing]**
-
-> **[SCREENSHOT PLACEHOLDER — Event Registration]**
+<p align="center">
+  <img src="images/eventobi.png" alt="Event" width="60%">
+</p>
 
 ---
 
@@ -192,9 +193,9 @@ Donation Record
 Payment Record
 ```
 
-> **[DIAGRAM PLACEHOLDER — Donation & Payment Flow]**
-
-> **[SCREENSHOT PLACEHOLDER — Donation Page]**
+<p align="center">
+  <img src="images/donation.png" alt="Donations" width="60%">
+</p>
 
 ---
 
