@@ -205,8 +205,6 @@ The platform tracks anonymous visitors using browser fingerprinting rather than 
 
 This allows an anonymous visitor — for example, someone who donates or downloads content without creating an account — to later claim their activity record if they choose to register. Actions performed during an anonymous session are associated with the visitor's fingerprint and can be linked to a registered account afterward.
 
-> **[DIAGRAM PLACEHOLDER — Visitor-to-User Record Claim Flow]**
-
 ---
 
 ## Domain Model
@@ -256,9 +254,9 @@ The administrative panel is the operational core of the platform.
 
 Most resources follow the same CRUD pattern — **Index**, **Create**, **Edit**, and **Show** pages.
 
-> **[SCREENSHOT PLACEHOLDER — Admin Dashboard]**
-
-> **[SCREENSHOT PLACEHOLDER — Admin Navigation / Resource Management]**
+<p align="center">
+  <img src="images/dashboard.png" alt="Dashboard" width="60%">
+</p>
 
 ---
 
