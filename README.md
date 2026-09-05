@@ -3,6 +3,7 @@
 # Music Production and Management Platform
 
 ### A full-stack platform for a gospel music ministry — music and video streaming, event bookings, a choir, donations, paid music sheets, and administrative operations, unified in one system.
+**Live :** [Visit the Platform](https://obiblomusic.com/)
 
 ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
@@ -16,8 +17,9 @@
 
 </div>
 
-![Platform Overview Placeholder](screenshots/platform-overview.png)
-
+---
+> [!NOTE]
+> This repository is a public case study of my work on the platform. It does **not** contain the application's proprietary source code, credentials, private user data, or other confidential information belonging to Peterfleming Arts Limited.
 ---
 
 ## Table of Contents
@@ -89,65 +91,15 @@ I was responsible for the design, development, testing, deployment, and ongoing 
 | Quality Assurance | Automated feature and unit test suite, CI-gated deployments |
 | Operations | Scheduled jobs, sitemap generation, production maintenance |
 
-> **Portfolio Note:** This repository is a public case study of my work on the platform. It does **not** contain the application's proprietary source code, credentials, private user data, or other confidential information belonging to Obiblo Music.
-
 ---
 
 ## Platform Architecture
 
 The platform combines a public-facing ministry website with an authenticated administrative back office.
 
-```text
-                         ┌──────────────────────────┐
-                         │      Public Website      │
-                         │                          │
-                         │  Music │ Video │ Events   │
-                         │  Bookings │ Music Sheets  │
-                         │  Donations                │
-                         └────────────┬─────────────┘
-                                      │
-                                      ▼
-                         ┌──────────────────────────┐
-                         │      Laravel Application │
-                         │                          │
-                         │ Controllers │ Services   │
-                         │ Requests    │ Middleware │
-                         │ Policies    │ Models     │
-                         │ Notifications│ Jobs       │
-                         └───────┬─────────┬────────┘
-                                 │         │
-                   ┌─────────────┘         └──────────────┐
-                   ▼                                      ▼
-        ┌─────────────────────┐                 ┌─────────────────────┐
-        │ Administrative      │                 │ Registered / Guest  │
-        │ Panel                │                 │ Users               │
-        │                     │                 │                     │
-        │ Super Admin          │                 │ Bookings, Donations │
-        │ Admin / Moderator    │                 │ Music Sheet Access  │
-        └──────────┬──────────┘                 └─────────────────────┘
-                   │
-                   ▼
-        ┌──────────────────────────┐
-        │       Database           │
-        │                          │
-        │ Users / Bookings / Events│
-        │ Audio / Video / Payments │
-        └──────────────────────────┘
-
-       External Services
-       ─────────────────
-       Cloudinary   → Image storage
-       Spotify/Audiomack → Audio streaming (linked, not hosted)
-       YouTube      → Video streaming (linked, not hosted)
-       Paystack     → Payments & donations
-       Mailjet      → Transactional email
-       Google       → Social authentication + Drive backups
-       Shared Hosting / SSH → Production
-```
-
-> **[DIAGRAM PLACEHOLDER — High-Level System Architecture]**
-> Create a polished architecture diagram showing the public website, Laravel application, admin panel, database, and the external streaming/payment/backup services.
-
+<p align="center">
+  <img src="images/architecture.png" alt="Architecture" width="60%">
+</p>
 ---
 
 ## Core Platform Areas
@@ -279,7 +231,9 @@ This allows an anonymous visitor — for example, someone who donates or downloa
 | **User** | Registered platform users |
 | **Visitor** | Anonymous visitors tracked via browser fingerprint, with no demographic data collected |
 
-> **[DIAGRAM PLACEHOLDER — Entity Relationship Diagram]**
+<p align="center">
+  <img src="images/erd.png" alt="Entity Relationship Diagram" width="60%">
+</p>
 
 ---
 
